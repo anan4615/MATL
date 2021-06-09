@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.1.2 (Python 3.6.5 on win32)" generated="20201104 16:35:27.220" rpa="false">
+<suite id="s1" name="Demo" source="C:\development\robot-scripts\MATL\Tests\demo.robot">
+<test id="s1-t1" name="multicourseRes">
+<kw name="Begin Web test" library="common" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20201104 16:35:27.455" level="INFO">Opening browser 'firefox' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20201104 16:35:27.455" endtime="20201104 16:35:32.767"></status>
+</kw>
+<status status="PASS" starttime="20201104 16:35:27.455" endtime="20201104 16:35:32.767"></status>
+</kw>
+<kw name="Get CSV data" library="datamanager">
+<arguments>
+<arg>${courses_multi}</arg>
+</arguments>
+<assign>
+<var>${CourseList}</var>
+</assign>
+<kw name="Read Csv File" library="readcsv">
+<arguments>
+<arg>${filepath}</arg>
+</arguments>
+<assign>
+<var>${Data}</var>
+</assign>
+<msg timestamp="20201104 16:35:32.768" level="INFO">${Data} = [['EDUA 5000 Introduction to History, Policy and Adv'], ['EDUA 5004 The Teacher in SEL - Powerful Personal a'], ['EDUA 5015 Envisioning Equitable Teaching and Lea']]</msg>
+<status status="PASS" starttime="20201104 16:35:32.768" endtime="20201104 16:35:32.769"></status>
+</kw>
+<msg timestamp="20201104 16:35:32.769" level="INFO">${CourseList} = [['EDUA 5000 Introduction to History, Policy and Adv'], ['EDUA 5004 The Teacher in SEL - Powerful Personal a'], ['EDUA 5015 Envisioning Equitable Teaching and Lea']]</msg>
+<status status="PASS" starttime="20201104 16:35:32.767" endtime="20201104 16:35:32.769"></status>
+</kw>
+<kw name="Open Slate form" library="slate">
+<arguments>
+<arg>${Un_FORM_URL}</arg>
+</arguments>
+<kw name="Load" library="slateformpage">
+<arguments>
+<arg>${data}</arg>
+</arguments>
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the active browser instance to the provided ``url``.</doc>
+<arguments>
+<arg>${data}</arg>
+</arguments>
+<msg timestamp="20201104 16:35:32.771" level="INFO">Opening url 'https://cbo.test.technolutions.net/register/Teacher-Leadership-New'</msg>
+<status status="PASS" starttime="20201104 16:35:32.770" endtime="20201104 16:35:34.980"></status>
+</kw>
+<status status="PASS" starttime="20201104 16:35:32.770" endtime="20201104 16:35:34.980"></status>
+</kw>
+<kw name="Maximize Window" library="slateformpage">
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20201104 16:35:34.981" endtime="20201104 16:35:35.244"></status>
+</kw>
+<status status="PASS" starttime="20201104 16:35:34.981" endtime="20201104 16:35:35.244"></status>
+</kw>
+<status status="PASS" starttime="20201104 16:35:32.769" endtime="20201104 16:35:35.245"></status>
+</kw>
+<kw name="title" library="slate">
+<kw name="Verify Page Loaded unauth" library="slateformpage">
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>Wait until page contains</arg>
+<arg>Teacher Leadership Registration - New Students</arg>
+</arguments>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>Teacher Leadership Registration - New Students</arg>
+</arguments>
+<status status="PASS" starttime="20201104 16:35:35.246" endtime="20201104 16:35:35.263"></status>
+</kw>
+<status status="PASS" starttime="20201104 16:35:35.246" endtime="20201104 16:35:35.263"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20201104 16:35:38.266" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20201104 16:35:35.264" endtime="20201104 16:35:38.266"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//label[contains(text(),'I am an active educator with a fieldwork site that')]</arg>
+</arguments>
+<msg timestamp="20201104 16:35:38.266" level="INFO">Clicking element 'xpath=//label[contains(text(),'I am an active educator with a fieldwork site that')]'.</msg>
+<status status="PASS" starttime="20201104 16:35:38.266" endtime="20201104 16:35:38.512"></status>
+</kw>
+<status status="PASS" starttime="20201104 16:35:35.245" endtime="20201104 16:35:38.513"></status>
+</kw>
+<status status="PASS" starttime="20201104 16:35:35.245" endtime="20201104 16:35:38.513"></status>
+</kw>
+<kw name="Select many course" library="slate">
+<arguments>
+<arg>${CourseList}</arg>
+</arguments>
+<kw name="Course Selection multi" library="slateformpage">
+<arguments>
+<arg>${CourseList}</arg>
+</arguments>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4s</arg>
+</arguments>
+<msg timestamp="20201104 16:35:42.522" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20201104 16:35:38.514" endtime="20201104 16:35:42.522"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${CourseList}</arg>
+</arguments>
+<status status="PASS" starttime="20201104 16:35:42.522" endtime="20201104 16:35:42.522"></status>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<arguments>
+<arg>${CourseList}</arg>
+</arguments>
+<assign>
+<var>${size}</var>
+</assign>
+<msg timestamp="20201104 16:35:42.522" level="INFO">Length is 3</msg>
+<msg timestamp="20201104 16:35:42.522" level="INFO">${size} = 3</msg>
+<status status="PASS" starttime="20201104 16:35:42.522" endtime="20201104 16:35:42.522"></status>
+</kw>
+<kw name="${a} IN RANGE [ 0 | ${size} ]" type="for">
+<kw name="${a} = 0" type="foritem">
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>@{CourseList}[${a}]</arg>
+</arguments>
+<assign>
+<var>${strconvert}</var>
+</assign>
+<msg timestamp="20201104 16:35:42.522" level="INFO">${strconvert} = ['EDUA 5000 Introduction to History, Policy and Adv']</msg>
+<status status="PASS" starttime="20201104 16:35:42.522" endtime="20201104 16:35:42.522"></status>
+</kw>
+<kw name="Remove String" library="String">
+<doc>Removes all ``removables`` from the given ``string``.</doc>
+<arguments>
+<arg>${strconvert}</arg>
+<arg>[</arg>
+</arguments>
+<assign>
+<var>${convert}</var>
+</assign>
+<msg timestamp="20201104 16:35:42.522" level="INFO">${convert} = 'EDUA 5000 Introduction to History, Policy and Adv']</msg>
+<status status="PASS" starttime="20201104 16:35:42.522" endtime="20201104 16:35:42.522"></status>
+</kw>
+<kw name="Remove String" library="String">
+<doc>Removes all ``removables`` from the given ``string``.</doc>
+<arguments>
+<arg>${convert}</arg>
+<arg>]</arg>
+</arguments>
+<assign>
+<var>${convert2}</var>
+</assign>
+<msg timestamp="20201104 16:35:42.522" level="INFO">${convert2} = 'EDUA 5000 Introduction to History, Policy and Adv'</msg>
+<status status="PASS" starttime="20201104 16:35:42.522" endtime="20201104 16:35:42.522"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${convert2}</arg>
+</arguments>
+<status status="PASS" starttime="20201104 16:35:42.522" endtime="20201104 16:35:42.522"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>css = //label[contains(text(), ${convert2})]</arg>
+</arguments>
+<msg timestamp="20201104 16:35:42.522" level="INFO">Clicking element 'css = //label[contains(text(), 'EDUA 5000 Introduction to History, Policy and Adv')]'.</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20201104 16:35:42.681" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-40.png"&gt;&lt;img src="selenium-screenshot-40.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201104 16:35:42.530" endtime="20201104 16:35:42.681"></status>
+</kw>
+<msg timestamp="20201104 16:35:42.684" level="FAIL">InvalidSelectorException: Message: Given css selector expression "//label[contains(text(), 'EDUA 5000 Introduction to History, Policy and Adv')]" is invalid: SyntaxError: '//label[contains(text(), 'EDUA 5000 Introduction to History, Policy and Adv')]' is not a valid selector
+</msg>
+<status status="FAIL" starttime="20201104 16:35:42.522" endtime="20201104 16:35:42.684"></status>
+</kw>
+<status status="FAIL" starttime="20201104 16:35:42.522" endtime="20201104 16:35:42.684"></status>
+</kw>
+<status status="FAIL" starttime="20201104 16:35:42.522" endtime="20201104 16:35:42.684"></status>
+</kw>
+<status status="FAIL" starttime="20201104 16:35:38.514" endtime="20201104 16:35:42.684"></status>
+</kw>
+<status status="FAIL" starttime="20201104 16:35:38.513" endtime="20201104 16:35:42.684"></status>
+</kw>
+<kw name="End Web test" library="common" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20201104 16:35:42.685" endtime="20201104 16:35:43.829"></status>
+</kw>
+<status status="PASS" starttime="20201104 16:35:42.685" endtime="20201104 16:35:43.829"></status>
+</kw>
+<status status="FAIL" starttime="20201104 16:35:27.454" endtime="20201104 16:35:43.829" critical="yes">InvalidSelectorException: Message: Given css selector expression "//label[contains(text(), 'EDUA 5000 Introduction to History, Policy and Adv')]" is invalid: SyntaxError: '//label[contains(text(), 'EDUA 5000 Introduction to History, Policy and Adv')]' is not a valid selector
+</status>
+</test>
+<test id="s1-t2" name="multicoursenRes">
+<kw name="Begin Web test" library="common" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20201104 16:35:43.832" level="INFO">Opening browser 'firefox' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20201104 16:35:43.831" endtime="20201104 16:35:49.124"></status>
+</kw>
+<status status="PASS" starttime="20201104 16:35:43.831" endtime="20201104 16:35:49.124"></status>
+</kw>
+<kw name="Get CSV data" library="datamanager">
+<arguments>
+<arg>${courses_multi}</arg>
+</arguments>
+<assign>
+<var>${CourseList}</var>
+</assign>
+<kw name="Read Csv File" library="readcsv">
+<arguments>
+<arg>${filepath}</arg>
+</arguments>
+<assign>
+<var>${Data}</var>
+</assign>
+<msg timestamp="20201104 16:35:49.126" level="INFO">${Data} = [['EDUA 5000 Introduction to History, Policy and Adv'], ['EDUA 5004 The Teacher in SEL - Powerful Personal a'], ['EDUA 5015 Envisioning Equitable Teaching and Lea']]</msg>
+<status status="PASS" starttime="20201104 16:35:49.125" endtime="20201104 16:35:49.126"></status>
+</kw>
+<msg timestamp="20201104 16:35:49.126" level="INFO">${CourseList} = [['EDUA 5000 Introduction to History, Policy and Adv'], ['EDUA 5004 The Teacher in SEL - Powerful Personal a'], ['EDUA 5015 Envisioning Equitable Teaching and Lea']]</msg>
+<status status="PASS" starttime="20201104 16:35:49.125" endtime="20201104 16:35:49.126"></status>
+</kw>
+<kw name="Open Slate form" library="slate">
+<arguments>
+<arg>${Un_FORM_URL}</arg>
+</arguments>
+<kw name="Load" library="slateformpage">
+<arguments>
+<arg>${data}</arg>
+</arguments>
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the active browser instance to the provided ``url``.</doc>
+<arguments>
+<arg>${data}</arg>
+</arguments>
+<msg timestamp="20201104 16:35:49.132" level="INFO">Opening url 'https://cbo.test.technolutions.net/register/Teacher-Leadership-New'</msg>
+<status status="PASS" starttime="20201104 16:35:49.131" endtime="20201104 16:35:50.950"></status>
+</kw>
+<status status="PASS" starttime="20201104 16:35:49.129" endtime="20201104 16:35:50.951"></status>
+</kw>
+<kw name="Maximize Window" library="slateformpage">
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20201104 16:35:50.951" endtime="20201104 16:35:51.212"></status>
+</kw>
+<status status="PASS" starttime="20201104 16:35:50.951" endtime="20201104 16:35:51.212"></status>
+</kw>
+<status status="PASS" starttime="20201104 16:35:49.127" endtime="20201104 16:35:51.212"></status>
+</kw>
+<kw name="title" library="slate">
+<kw name="Verify Page Loaded unauth" library="slateformpage">
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>Wait until page contains</arg>
+<arg>Teacher Leadership Registration - New Students</arg>
+</arguments>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>Teacher Leadership Registration - New Students</arg>
+</arguments>
+<status status="PASS" starttime="20201104 16:35:51.214" endtime="20201104 16:35:51.243"></status>
+</kw>
+<status status="PASS" starttime="20201104 16:35:51.213" endtime="20201104 16:35:51.243"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20201104 16:35:54.243" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20201104 16:35:51.243" endtime="20201104 16:35:54.243"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//label[contains(text(),'I am an active educator with a fieldwork site that')]</arg>
+</arguments>
+<msg timestamp="20201104 16:35:54.243" level="INFO">Clicking element 'xpath=//label[contains(text(),'I am an active educator with a fieldwork site that')]'.</msg>
+<status status="PASS" starttime="20201104 16:35:54.243" endtime="20201104 16:35:54.491"></status>
+</kw>
+<status status="PASS" starttime="20201104 16:35:51.213" endtime="20201104 16:35:54.491"></status>
+</kw>
+<status status="PASS" starttime="20201104 16:35:51.213" endtime="20201104 16:35:54.491"></status>
+</kw>
+<kw name="Select many course" library="slate">
+<arguments>
+<arg>${CourseList}</arg>
+</arguments>
+<kw name="Course Selection multi" library="slateformpage">
+<arguments>
+<arg>${CourseList}</arg>
+</arguments>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4s</arg>
+</arguments>
+<msg timestamp="20201104 16:35:58.493" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20201104 16:35:54.492" endtime="20201104 16:35:58.493"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${CourseList}</arg>
+</arguments>
+<status status="PASS" starttime="20201104 16:35:58.493" endtime="20201104 16:35:58.494"></status>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<arguments>
+<arg>${CourseList}</arg>
+</arguments>
+<assign>
+<var>${size}</var>
+</assign>
+<msg timestamp="20201104 16:35:58.494" level="INFO">Length is 3</msg>
+<msg timestamp="20201104 16:35:58.494" level="INFO">${size} = 3</msg>
+<status status="PASS" starttime="20201104 16:35:58.494" endtime="20201104 16:35:58.494"></status>
+</kw>
+<kw name="${a} IN RANGE [ 0 | ${size} ]" type="for">
+<kw name="${a} = 0" type="foritem">
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>@{CourseList}[${a}]</arg>
+</arguments>
+<assign>
+<var>${strconvert}</var>
+</assign>
+<msg timestamp="20201104 16:35:58.495" level="INFO">${strconvert} = ['EDUA 5000 Introduction to History, Policy and Adv']</msg>
+<status status="PASS" starttime="20201104 16:35:58.494" endtime="20201104 16:35:58.495"></status>
+</kw>
+<kw name="Remove String" library="String">
+<doc>Removes all ``removables`` from the given ``string``.</doc>
+<arguments>
+<arg>${strconvert}</arg>
+<arg>[</arg>
+</arguments>
+<assign>
+<var>${convert}</var>
+</assign>
+<msg timestamp="20201104 16:35:58.495" level="INFO">${convert} = 'EDUA 5000 Introduction to History, Policy and Adv']</msg>
+<status status="PASS" starttime="20201104 16:35:58.495" endtime="20201104 16:35:58.495"></status>
+</kw>
+<kw name="Remove String" library="String">
+<doc>Removes all ``removables`` from the given ``string``.</doc>
+<arguments>
+<arg>${convert}</arg>
+<arg>]</arg>
+</arguments>
+<assign>
+<var>${convert2}</var>
+</assign>
+<msg timestamp="20201104 16:35:58.495" level="INFO">${convert2} = 'EDUA 5000 Introduction to History, Policy and Adv'</msg>
+<status status="PASS" starttime="20201104 16:35:58.495" endtime="20201104 16:35:58.495"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${convert2}</arg>
+</arguments>
+<status status="PASS" starttime="20201104 16:35:58.496" endtime="20201104 16:35:58.496"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>css = //label[contains(text(), ${convert2})]</arg>
+</arguments>
+<msg timestamp="20201104 16:35:58.496" level="INFO">Clicking element 'css = //label[contains(text(), 'EDUA 5000 Introduction to History, Policy and Adv')]'.</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20201104 16:35:58.680" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-41.png"&gt;&lt;img src="selenium-screenshot-41.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201104 16:35:58.504" endtime="20201104 16:35:58.681"></status>
+</kw>
+<msg timestamp="20201104 16:35:58.681" level="FAIL">InvalidSelectorException: Message: Given css selector expression "//label[contains(text(), 'EDUA 5000 Introduction to History, Policy and Adv')]" is invalid: SyntaxError: '//label[contains(text(), 'EDUA 5000 Introduction to History, Policy and Adv')]' is not a valid selector
+</msg>
+<status status="FAIL" starttime="20201104 16:35:58.496" endtime="20201104 16:35:58.682"></status>
+</kw>
+<status status="FAIL" starttime="20201104 16:35:58.494" endtime="20201104 16:35:58.682"></status>
+</kw>
+<status status="FAIL" starttime="20201104 16:35:58.494" endtime="20201104 16:35:58.682"></status>
+</kw>
+<status status="FAIL" starttime="20201104 16:35:54.492" endtime="20201104 16:35:58.682"></status>
+</kw>
+<status status="FAIL" starttime="20201104 16:35:54.491" endtime="20201104 16:35:58.682"></status>
+</kw>
+<kw name="End Web test" library="common" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20201104 16:35:58.683" endtime="20201104 16:35:59.822"></status>
+</kw>
+<status status="PASS" starttime="20201104 16:35:58.683" endtime="20201104 16:35:59.822"></status>
+</kw>
+<status status="FAIL" starttime="20201104 16:35:43.831" endtime="20201104 16:35:59.823" critical="yes">InvalidSelectorException: Message: Given css selector expression "//label[contains(text(), 'EDUA 5000 Introduction to History, Policy and Adv')]" is invalid: SyntaxError: '//label[contains(text(), 'EDUA 5000 Introduction to History, Policy and Adv')]' is not a valid selector
+</status>
+</test>
+<status status="FAIL" starttime="20201104 16:35:27.222" endtime="20201104 16:35:59.824"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="2">Critical Tests</stat>
+<stat pass="0" fail="2">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="2" id="s1" name="Demo">Demo</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20201104 16:35:27.214" level="ERROR">Error in file 'C:\development\robot-scripts\MATL\Tests\demo.robot': Invalid syntax in test case 'multicourseRes': Non-existing setting 'Arguments'.</msg>
+<msg timestamp="20201104 16:35:27.215" level="ERROR">Error in file 'C:\development\robot-scripts\MATL\Tests\demo.robot': Invalid syntax in test case 'multicoursenRes': Non-existing setting 'Arguments'.</msg>
+<msg timestamp="20201104 16:35:27.250" level="WARN">Collapsing consecutive whitespace during parsing is deprecated. Fix ' # This needs to be updated' in file 'C:\development\robot-scripts\MATL\Resources\Page Object\slateformpage.robot' on line 81.</msg>
+</errors>
+</robot>
